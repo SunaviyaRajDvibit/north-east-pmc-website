@@ -496,6 +496,13 @@
   content: none;
 }
 
+.project-management {
+  border-style: solid;
+  border-color: #233b69;
+  border-width: 0px 5px 3px 4px;
+  border-radius: 10px;
+}
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .col-md-5 .feature-box::after,
