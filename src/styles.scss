@@ -1,1 +1,75 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import "bootstrap/scss/bootstrap";
+
+.body {
+  margin: 0;
+  font-family: "Abhaya Libre", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #2c2c2c;
+  font-size: 17px;
+  line-height: 1.75;
+  letter-spacing: 0.2px;
+  overflow-x: hidden;
+}
+
+.heading {
+  font-family: "Abhaya Libre", serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #233b69;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.sub-heading {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 3.5rem;
+  color: #444444;
+  text-transform: capitalize;
+  letter-spacing: 0.7px;
+}
+
+.layout-main-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+  padding: 0rem 0rem 0 0rem;
+  transition: margin-left var(--layout-section-transition-duration);
+}
+
+.layout-main {
+  flex: 1 1 auto;
+  padding-bottom: 2rem;
+}
+
+.text-center {
+  text-align: center !important;
+  color: red;
+}
+
+.section-sty {
+  padding: 5em 5rem 3rem 5rem;
+  position: relative;
+  width: 100%;
+}
+
+// mobile css
+
+@media (max-width: 767.98px) {
+  .card-view-section {
+    padding: 2rem 0;
+  }
+  .ftco-section {
+    padding: 2em 0;
+  }
+}

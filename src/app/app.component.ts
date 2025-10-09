@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from "./component/footer/footer.component";
+import { CommonModule } from '@angular/common';
+import { HeaderComponent } from "./component/header/header.component";
+import { HomeLayoutComponent } from "./Layout/home-layout/home-layout.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet, FooterComponent, HeaderComponent, HomeLayoutComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
   title = 'north-east-pmc-website';
+  containerClass: any;
 }
