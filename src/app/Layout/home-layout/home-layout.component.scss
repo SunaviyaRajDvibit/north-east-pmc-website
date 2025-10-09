@@ -118,21 +118,19 @@
 
 /* Why Choose Us Section */
 
-/* Container for the comparison block */
 .comparison-wrapper {
   max-width: 1200px;
-  margin: 20px auto; /* Center the wrapper */
+  margin: 20px auto;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden; /* Contains the shadow and rounded corners */
-  background-color: #fff;
+  // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  // background-color: #fff;
 }
 
-/* --- Shared Icon Styling --- */
 .why-choose-icon-circle {
   width: 50px;
   height: 50px;
-  border-radius: 50px; /* Squircle shape */
+  border-radius: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,19 +139,42 @@
   border: 2px solid #ffbeba;
 }
 
+.why-choose-icon-circle-sccess {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #f0fef5;
+  border: 2px solid #caf1d8;
+}
+
 .why-choose-icon-circle img {
   width: 30px;
   height: 30px;
 }
 
-/* --- Chaos Column (Left) Styling --- */
+.why-choose-icon-circle-sccess img {
+  width: 30px;
+  height: 30px;
+}
+
 .chaos-column {
-  /* Custom light red background for the main column */
   background-color: #fef0f0;
+  border-radius: 20px;
+}
+
+.chaos-title-box {
+  border-radius: 20px 0px 0px 20px;
+}
+
+.chaos-title-panel-box {
+  border-radius: 0px 20px 20px 0px;
 }
 
 .chaos-title-panel {
-  /* Custom slightly darker red background for the title area */
   background-color: #fae0e0;
   flex-shrink: 0;
   display: flex;
@@ -161,28 +182,23 @@
   justify-content: center;
 }
 
-/* --- Control Column (Right) Styling --- */
 .control-column {
-  /* Custom light green background for the main column */
   background-color: #f2fff5;
+  border-radius: 20px;
 }
 
 .control-title-panel {
-  /* Custom slightly darker green background for the title area */
   background-color: #e6ffe0;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-/* --- Vertical Text Styling --- */
 .vertical-text {
   font-size: 1.5rem;
   padding: 0 10px;
   letter-spacing: 1px;
 
-  /* Key properties for vertical text */
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
@@ -190,6 +206,25 @@
 .without-rotation {
   color: #dc3545;
   letter-spacing: 2.1px;
+}
+
+/* Our Process Section */
+
+.our-process-box {
+  max-width: 900px;
+  margin: 20px auto;
+}
+
+.process-step-circle img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.process-step-circles img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
 }
 
 /* --- Responsive Adjustments (for mobile) --- */
@@ -216,5 +251,255 @@
     height: auto;
     padding: 1rem;
     justify-content: flex-start;
+  }
+}
+
+.project-flow {
+  max-width: 1200px;
+}
+
+.role-section {
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.role-desc {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.custom-line {
+  position: relative;
+  width: 100%;
+  height: 10px;
+  background-color: #1d3362; /* navy color */
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* Left curved end */
+.custom-line::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 10px;
+  height: 40px;
+  background-color: #1d3362;
+  border-radius: 6px;
+}
+
+/* Right curved end */
+.custom-line::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  width: 10px;
+  height: 40px;
+  background-color: #1d3362;
+  border-radius: 6px;
+}
+
+.img-right {
+  float: right;
+  margin-left: 15px;
+}
+
+.img-left {
+  display: block;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.curved-lines {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background-color: #1d3362; /* Dark blue color */
+  border-radius: 10px; /* Makes both ends curved */
+}
+
+/* Left curved cap */
+.curved-lines::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -180%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 40px;
+  background-color: #1d3362;
+  border-radius: 10px;
+}
+
+/* Right curved cap */
+.curved-lines::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 250%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 40px;
+  background-color: #1d3362;
+  border-radius: 10px;
+}
+
+/*------------------*/
+
+/* Main horizontal line */
+.horizontal-connector {
+  position: relative;
+  width: 85%;
+  height: 10px;
+  background-color: #1d3362;
+  border-radius: 5px;
+}
+
+/* Curved ends */
+.horizontal-connector::before,
+.horizontal-connector::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  background-color: #1d3362;
+  border-radius: 5px;
+}
+
+.horizontal-connector::before {
+  top: -40px;
+  left: 0;
+}
+
+.horizontal-connector::after {
+  bottom: -40px;
+  right: 0;
+}
+
+/* Vertical connectors */
+.vertical-connector {
+  position: absolute;
+  width: 10px;
+  height: 40px;
+  background-color: #1d3362;
+  border-radius: 5px;
+  top: 5px;
+}
+
+.vertical-connector.left {
+  left: 20%;
+}
+
+.vertical-connector.center {
+  left: 58%;
+}
+
+.vertical-connector.right {
+  right: 18%;
+}
+
+/* Info Boxes */
+.info-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #1d3362;
+  border-radius: 8px;
+  padding: 10px 50px;
+  background-color: #fff;
+  color: #1d3362;
+  font-weight: 700;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.info-box:hover {
+  background-color: #1d3362;
+  color: #fff;
+}
+
+.info-box .icon {
+  width: 24px;
+  height: 24px;
+}
+
+.role-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* our role section */
+.feature-box {
+  border: 2px solid #233b69;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: 600;
+  color: #233b69;
+  font-size: 1.1rem;
+  background: #fff;
+  transition: 0.3s ease;
+  position: relative;
+  text-align: center;
+}
+
+.feature-box:hover {
+  background: #233b69;
+  color: #fff;
+}
+
+.role-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+
+/* ---- ARROW LINES ---- */
+.col-md-5 .feature-box::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 40px;
+  height: 2px;
+  background: #233b69;
+  transform: rotate(45deg);
+  transform-origin: left center;
+}
+
+/* Remove line from last box */
+.col-md-5 .feature-box:last-child::after {
+  content: none;
+}
+
+/* Optional small arrowhead */
+.col-md-5 .feature-box::before {
+  content: "";
+  position: fixed;
+  right: -56px;
+  top: calc(50% - 4px);
+  border: 6px solid transparent;
+  border-left-color: #233b69;
+  transform: rotate(10deg);
+}
+
+/* Remove arrowhead from last box */
+.col-md-5 .feature-box:last-child::before {
+  content: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .col-md-5 .feature-box::after,
+  .col-md-5 .feature-box::before {
+    display: none; /* hide arrows on mobile */
   }
 }
