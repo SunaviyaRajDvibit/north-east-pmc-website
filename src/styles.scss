@@ -39,11 +39,16 @@
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 3.5rem;
   color: #444444;
   text-transform: capitalize;
   letter-spacing: 0.7px;
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .layout-main-container {
@@ -69,6 +74,35 @@
   padding: 5em 5rem 3rem 5rem;
   position: relative;
   width: 100%;
+}
+
+.btn-primary {
+  background-color: #233b69; /* Deep navy blue tone */
+  border: none;
+  padding: 14px 38px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 12px rgba(35, 59, 105, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #1c2e56; /* Slightly darker tone */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(35, 59, 105, 0.4);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 8px rgba(35, 59, 105, 0.4);
+}
+
+.btn-primary:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(35, 59, 105, 0.4);
 }
 
 // mobile css

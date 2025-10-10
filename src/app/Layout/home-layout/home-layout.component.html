@@ -453,8 +453,27 @@
     </section>
 </section>
 
-<section class="section-sty">
-    <h3 class="heading mb-2">Our projects</h3>
-    <p class="sub-heading mt-3">We specialize in a wide range of construction services, including residential,
-        commercial, and industrial projects.</p>
-</section>
+<div class="project-background">
+    <section class="section-sty">
+        <h3 class="heading mb-2">Our projects</h3>
+        <p class="sub-heading mt-3">We specialize in a wide range of construction services, including residential,
+            commercial, and industrial projects.</p>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3" *ngFor="let proj of projects">
+                    <div class="project-card">
+                        <img [src]="proj.image" alt="proj.title">
+                        <div class="project-overlay">
+                            <h4>{{proj.title}}</h4>
+                            <p>{{proj.description}}</p>
+                            <a href="#" class="view-more">View More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center text-center mt-4">
+                    <button class="btn btn-primary mt-5">VIEW All Projects</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
