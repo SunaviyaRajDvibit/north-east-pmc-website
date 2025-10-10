@@ -587,14 +587,209 @@
   text-decoration: underline;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .col-md-5 .feature-box::after,
-  .col-md-5 .feature-box::before {
-    display: none; /* hide arrows on mobile */
-  }
-  .project-card {
-    height: 50vw;
-    border-radius: 15px;
-  }
+/* something new */
+
+.somrthing {
+  padding: 3em 2rem 0rem 0rem;
+  position: relative;
+  width: 100%;
+}
+
+.somrthing-wrong {
+  background-color: #12223b;
+  background-image: url("https://demo.awaikenthemes.com/builtup/wp-content/uploads/2024/06/cta-box-bg.png");
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: auto;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.somrthing-wrong h3 {
+  color: #fff;
+  font-size: 3.2rem;
+  text-transform: capitalize;
+  line-height: 5rem;
+  font-weight: 600;
+}
+
+.somrthing-wrong p {
+  color: #ebebeb;
+  margin-top: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 2rem;
+  max-width: 100%;
+}
+
+/* CTA Button */
+.cta-btn {
+  background-color: #fff;
+  color: #12223b;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+}
+
+.cta-btn:hover {
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.cta-img {
+  position: relative;
+  min-height: 400px; /* ensures space for image to sit */
+}
+
+/* ✅ Fix image at bottom of section */
+.bottom-fixed-img {
+  position: absolute;
+  bottom: 0; /* anchors image to the bottom */
+  right: 0; /* aligns image to right edge */
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* services section */
+
+.services-section {
+  background-color: #e9f7fe;
+  background-image: url(https://demo.awaikenthemes.com/builtup/wp-content/uploads/2024/06/our-service-bg.png);
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.image-compare-container {
+  position: relative;
+  width: 100%;
+  max-width: 950px;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: ew-resize;
+  user-select: none;
+  margin: 50px auto;
+}
+
+.image-compare-container img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+}
+
+.image-compare-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: width 0.1s linear;
+}
+
+.image-compare-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-compare-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background: #fff;
+  border-radius: 2px;
+  cursor: ew-resize;
+  transition: left 0.1s linear;
+}
+
+.image-compare-handle::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Update and Take Follow UPS */
+
+.updateTake-section {
+  background-color: #d4e3ff85;
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2Flight-image.png?alt=media&token=0d666dd0-f8e9-499a-83a2-a3bf33e82c85);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 52px;
+  text-transform: uppercase;
+  margin-top: 22rem;
+  margin-bottom: 40px;
+  color: #2a2a2a;
+}
+
+.table {
+  background: #e9e9e9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.table thead {
+  background-color: #e9e9e9;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.table th {
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.mobile-mockup {
+  max-width: 200px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 10px solid #000;
+  background: #000;
+}
+
+.small-img {
+  border-radius: 10px;
+  max-width: 200px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.caption {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+  margin-top: 10px;
+  text-transform: uppercase;
 }

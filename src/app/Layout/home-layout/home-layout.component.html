@@ -453,6 +453,7 @@
     </section>
 </section>
 
+<!-- Projects -->
 <div class="project-background">
     <section class="section-sty">
         <h3 class="heading mb-2">Our projects</h3>
@@ -477,3 +478,165 @@
         </div>
     </section>
 </div>
+
+<!-- Something Great Together Section -->
+<div class="somrthing-wrong">
+    <section class="somrthing container position-relative">
+        <div class="row align-items-center">
+            <!-- Left Section -->
+            <div class="col-lg-7 col-md-12">
+                <h3>Let's Build Something Great Together!</h3>
+                <p>
+                    Don’t wait any longer to bring your construction dreams to life.
+                    Partner with Builtup and experience unparalleled service and quality.
+                </p>
+                <a href="#" class="cta-btn mt-3 mb-5">
+                    Get Free Quote <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- Right Section (Image fixed to bottom) -->
+            <div class="col-lg-5 col-md-12 text-center position-relative cta-img">
+                <img src="https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Fim-1.png?alt=media&token=ca6cefa5-c6d4-4f23-aae8-c7c0fe288a79"
+                    alt="Engineer Woman" class="img-fluid bottom-fixed-img" />
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Our services Section -->
+<div class="services-section">
+    <section class="section-sty">
+        <h3 class="heading mb-2">Our services</h3>
+        <p class="sub-heading mt-3">We specialize in residential, commercial, industrial construction.</p>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4" *ngFor="let ser of services">
+                    <div class="project-card">
+                        <img [src]="ser.image" alt="proj.title">
+                        <div class="project-overlay">
+                            <h4>{{ser.title}}</h4>
+                            <p>{{ser.description}}</p>
+                            <a href="#" class="view-more">View More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 d-flex flex-column justify-content-center align-items-center text-center mt-4">
+                    <button class="btn btn-primary mt-5">VIEW All services</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Our Approach -->
+<section class="section-sty">
+    <h3 class="heading mb-2">Our Approach to Cost Optimization</h3>
+    <p class="sub-heading mt-3">Smart solutions that balance cost, quality, and client satisfaction.</p>
+    <div class="image-compare-container" #compareContainer>
+        <!-- Background Image -->
+        <img src="https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2FB1.png?alt=media&token=25c96ea7-0d2e-4d26-91fa-25fb5ffff574"
+            alt="Before" />
+
+        <!-- Foreground Image (Overlay) -->
+        <div class="image-compare-overlay" #overlay>
+            <img src="https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2FA1.jpg?alt=media&token=7c8cf11f-303e-40cb-b761-f21fa8f24b38"
+                alt="After" />
+        </div>
+
+        <!-- Draggable Handle -->
+        <div class="image-compare-handle" #handle></div>
+    </div>
+</section>
+
+<!-- How We Update & Take Follow Ups Section -->
+<section class="updateTake-section">
+    <div class="container py-5">
+        <div class="row align-items-start g-5">
+
+            <!-- Left Column -->
+            <div class="col-lg-6">
+                <h2 class="section-title">HOW WE UPDATE & TAKE FOLLOW UPS</h2>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>SR.NO</th>
+                                <th>DRAWING LIST</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>01</td>
+                                <td>Bedroom - 5 Bathroom Ceiling Drawing.</td>
+                            </tr>
+                            <tr>
+                                <td>02</td>
+                                <td>Bedroom - 5 Dressing Area Drawing.</td>
+                            </tr>
+                            <tr>
+                                <td>03</td>
+                                <td>2nd Floor Seating Area Ceilings and Electric Drawing.</td>
+                            </tr>
+                            <tr>
+                                <td>04</td>
+                                <td>Bedroom - 4 Bathroom Ceiling Drawing.</td>
+                            </tr>
+                            <tr>
+                                <td>05</td>
+                                <td>Bedroom - 3 Bathroom Ceiling Drawing.</td>
+                            </tr>
+                            <tr>
+                                <td>06</td>
+                                <td>Bedroom - 3 Dressing Area Drawing.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col-lg-6 text-center">
+                <div class="row">
+                    <div class="col-6 p-3 mt-5">
+                        <div class="d-flex flex-column align-items-center mb-4 mt-5">
+                            <p class="caption">SYSTEMATIC PLANNING:<br> <strong>THE REQUIRED DRAWING LIST</strong></p>
+                            <div class="mb-3">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2FA.jpg?alt=media&token=96920684-d9f5-4ded-afec-cc1ac9795205"
+                                    alt="Systematic Planning" class="small-img mb-2">
+                            </div>
+                            <div class="mb-3">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2FScreenshot%202025-10-01%20113722%201.png?alt=media&token=34493b9d-ded7-4166-8401-debf6caa6237"
+                                    alt="Systematic Planning" class="small-img mb-2">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 p-3 mt-5">
+                        <div class="d-flex flex-column align-items-center mb-4 mt-5">
+                            <div class="mb-3">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2FScreenshot%202025-10-01%20113722%201.png?alt=media&token=34493b9d-ded7-4166-8401-debf6caa6237"
+                                    alt="Systematic Planning" class="small-img mb-2">
+
+                            </div>
+                            <p class="caption">Real-Time Transparency: <br> <strong>Instant Photo Updates</strong></p>
+                            <div class="mb-3">
+                                <img src="https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2FA.jpg?alt=media&token=96920684-d9f5-4ded-afec-cc1ac9795205"
+                                    alt="Systematic Planning" class="small-img mb-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-sty">
+    <h3 class="heading mb-2">Our Clients</h3>
+    <p class="sub-heading mt-3">Trusted by leading businesses, developers, and institutions for reliable project
+        management solutions.</p>
+
+
+</section>
