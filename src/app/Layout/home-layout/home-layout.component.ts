@@ -6,7 +6,7 @@ import {
   HostListener,
   ViewChild,
 } from '@angular/core';
-import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -22,6 +22,87 @@ export class HomeLayoutComponent {
   @ViewChild('compareContainer') compareContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('overlay') overlay!: ElementRef<HTMLDivElement>;
   @ViewChild('handle') handle!: ElementRef<HTMLDivElement>;
+  activeSlide = 0;
+
+  testimonials = [
+    {
+      name: 'Rohit Mehta',
+      role: 'Business Owner',
+      image: 'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2Ftest%2F14.jpg?alt=media&token=8f6e4efa-35c5-4886-a93a-1758561ad060',
+      stars: 5,
+      feedback:
+        'Working with this PMC team was a smooth experience. They kept everything on schedule, managed costs effectively, and provided regular updates. We felt involved and stress-free throughout the project. Their problem-solving ability and focus on quality made a real difference. Highly recommended for professional project management.'
+    },
+    {
+      name: 'Dr. Neha Shah',
+      role: 'Hospital Director',
+      image: 'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2Ftest%2F11.jpg?alt=media&token=88b99b69-1b26-46c0-94f5-7e6457fc450b',
+      stars: 5,
+      feedback:
+        'Our hospital construction was handled with complete professionalism. The team ensured quality checks, transparent communication, and efficient resource management. They controlled costs without compromising standards and delivered the project on time. Excellent consultancy support.'
+    },
+    {
+      name: 'Vijay Patel',
+      role: 'Real Estate Developer',
+      image: 'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2Ftest%2F12.jpg?alt=media&token=66adf753-b247-4ae7-bacc-e0af6ff36f98',
+      stars: 5,
+      feedback:
+        'This team understood our priorities of efficiency and profitability. Their expertise in cost optimization and resource utilization saved time and money. Reports and supervision were accurate, and quality was never compromised. A trustworthy partner we will continue working with on future developments.'
+    },
+    {
+      name: 'Dr. Neha Shah',
+      role: 'Hospital Director',
+      image: 'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2Ftest%2F11.jpg?alt=media&token=88b99b69-1b26-46c0-94f5-7e6457fc450b',
+      stars: 5,
+      feedback:
+        'Our hospital construction was handled with complete professionalism. The team ensured quality checks, transparent communication, and efficient resource management. They controlled costs without compromising standards and delivered the project on time. Excellent consultancy support.'
+    },
+    {
+      name: 'Tejas Shah',
+      role: 'Business Owner',
+      image: 'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2Ftest%2F14.jpg?alt=media&token=8f6e4efa-35c5-4886-a93a-1758561ad060',
+      stars: 5,
+      feedback:
+        'Working with this PMC team was a smooth experience. They kept everything on schedule, managed costs effectively, and provided regular updates. We felt involved and stress-free throughout the project. Their problem-solving ability and focus on quality made a real difference. Highly recommended for professional project management.'
+    },
+
+    {
+      name: 'Rahul Sharma',
+      role: 'Business Owner',
+      image: 'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2Ftest%2F14.jpg?alt=media&token=8f6e4efa-35c5-4886-a93a-1758561ad060',
+      stars: 5,
+      feedback:
+        'Working with this PMC team was a smooth experience. They kept everything on schedule, managed costs effectively, and provided regular updates. We felt involved and stress-free throughout the project. Their problem-solving ability and focus on quality made a real difference. Highly recommended for professional project management.'
+    },
+  ];
+
+  testimonialGroups: any[] = [];
+  carousel: any;
+
+  ngOnInit(): void {
+    this.testimonialGroups = this.chunkArrayTestimonials(this.testimonials, 3);
+  }
+
+  chunkArrayTestimonials(arr: any[], size: number) {
+    const result = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+    return result;
+  }
+
+  goTo(index: number) {
+    if (this.carousel) {
+      this.carousel.select(`slide-${index}`);
+      this.activeSlide = index;
+    }
+  }
+  onSlide(event: NgbSlideEvent) {
+    const id = event.current;
+    if (id.startsWith('slide-')) {
+      this.activeSlide = Number(id.replace('slide-', ''));
+    }
+  }
 
   clients = [
     { name: 'HARISHBHAI GAGWANI', company: 'JAY VIJAY TEXTILE', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },

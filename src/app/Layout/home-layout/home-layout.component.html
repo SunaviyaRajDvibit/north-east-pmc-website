@@ -633,6 +633,7 @@
     </div>
 </section>
 
+<!-- Our Clients Section -->
 <section class="section-sty">
     <h3 class="heading mb-2">Our Clients</h3>
     <p class="sub-heading mt-3">Trusted by leading businesses, developers, and institutions for reliable project
@@ -673,4 +674,41 @@
         </ng-template>
     </ngb-carousel>
 
+</section>
+
+<!-- Our Testimonials Section -->
+<section class="section-sty">
+    <h3 class="heading mb-2">Our Testimonials</h3>
+    <p class="sub-heading mt-3">Hear from our clients about their experience working with us.</p>
+    <div class="container">
+        <ngb-carousel #carouselRef="ngbCarousel" [interval]="3000" [pauseOnHover]="true"
+            [showNavigationIndicators]="false" [showNavigationArrows]="true" (slide)="onSlide($event)"
+            class="testimonial-carousel">
+            <ng-template ngbSlide *ngFor="let group of testimonialGroups">
+                <div class="row justify-content-center">
+                    <div class="col-md-4" *ngFor="let testimonial of group">
+                        <div class="testimonial-card p-4 mb-4">
+                            <div class="stars mb-3">
+                                <i class="fas fa-star p-1" *ngFor="let s of [].constructor(testimonial.stars)"></i>
+                            </div>
+                            <p class="testimonial-text">{{ testimonial.feedback }}</p>
+                            <div class="d-flex align-items-center mt-4" style="border-top: 2px solid #e6e6e6;">
+                                <img [src]="testimonial.image" [alt]="testimonial.name"
+                                    class="testimonial-img me-3 mt-4" />
+                                <div class="mt-4">
+                                    <h5 class="fw-bold mb-0 testimonial-user-name">{{ testimonial.name }}</h5>
+                                    <small class="text-muted">{{ testimonial.role }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+        <div class="custom-indicators text-center mt-4">
+            <button *ngFor="let g of testimonialGroups; let idx = index" class="indicator-dot"
+                [class.active]="idx === activeSlide" (click)="goTo(idx)"
+                [attr.aria-label]="'Go to slide ' + (idx + 1)"></button>
+        </div>
+    </div>
 </section>
