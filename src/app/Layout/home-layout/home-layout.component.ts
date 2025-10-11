@@ -18,11 +18,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './home-layout.component.scss'
 })
 export class HomeLayoutComponent {
-
   @ViewChild('compareContainer') compareContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('overlay') overlay!: ElementRef<HTMLDivElement>;
   @ViewChild('handle') handle!: ElementRef<HTMLDivElement>;
+
   activeSlide = 0;
+  testimonialGroups: any[] = [];
+  carousel: any;
+  isDragging = false;
+  clientChunks: any[] = [];
 
   testimonials = [
     {
@@ -75,105 +79,6 @@ export class HomeLayoutComponent {
         'Working with this PMC team was a smooth experience. They kept everything on schedule, managed costs effectively, and provided regular updates. We felt involved and stress-free throughout the project. Their problem-solving ability and focus on quality made a real difference. Highly recommended for professional project management.'
     },
   ];
-
-  testimonialGroups: any[] = [];
-  carousel: any;
-
-  ngOnInit(): void {
-    this.testimonialGroups = this.chunkArrayTestimonials(this.testimonials, 3);
-  }
-
-  chunkArrayTestimonials(arr: any[], size: number) {
-    const result = [];
-    for (let i = 0; i < arr.length; i += size) {
-      result.push(arr.slice(i, i + size));
-    }
-    return result;
-  }
-
-  goTo(index: number) {
-    if (this.carousel) {
-      this.carousel.select(`slide-${index}`);
-      this.activeSlide = index;
-    }
-  }
-  onSlide(event: NgbSlideEvent) {
-    const id = event.current;
-    if (id.startsWith('slide-')) {
-      this.activeSlide = Number(id.replace('slide-', ''));
-    }
-  }
-
-  clients = [
-    { name: 'HARISHBHAI GAGWANI', company: 'JAY VIJAY TEXTILE', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'SAURABH BANSAL', company: 'HAPPY EXOTICA', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'DR. DIVYESH PATHAK', company: 'ADWAITA CANCER HOSPITAL', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'ROMILBHAI VANAWALA', company: 'ASHIRWAD FARM', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'NIRAV KHOSIA', group: 'INFINITY GROUP', company: 'INFINITY ARBOR, SAMPLE FLAT', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'RAIUBHAI HATHIWALA', company: 'NITI NAGAR, BUNGALOW', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'HIMANSHU PATEL', company: 'PRIME CONSTRUCTIONS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'VISHAL DESAI', company: 'STAR TOWER', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'ANIL SHAH', company: 'SKYLINE HEIGHTS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'HIMANSHU PATEL', company: 'PRIME CONSTRUCTIONS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'VISHAL DESAI', company: 'STAR TOWER', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
-    { name: 'ANIL SHAH', company: 'SKYLINE HEIGHTS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' }
-  ];
-
-  clientChunks: any[] = [];
-
-  constructor() {
-    this.clientChunks = this.chunkArray(this.clients, 6); // 6 clients per slide
-  }
-
-  private chunkArray(arr: any[], size: number) {
-    const result = [];
-    for (let i = 0; i < arr.length; i += size) {
-      result.push(arr.slice(i, i + size));
-    }
-    return result;
-  }
-
-  isDragging = false;
-
-  ngAfterViewInit(): void {
-    const container = this.compareContainer.nativeElement;
-    container.addEventListener('mousedown', () => this.startDrag());
-    container.addEventListener('mouseup', () => this.stopDrag());
-    container.addEventListener('mouseleave', () => this.stopDrag());
-    container.addEventListener('mousemove', (e) => this.moveHandle(e));
-
-    // For touch devices
-    container.addEventListener('touchstart', () => this.startDrag());
-    container.addEventListener('touchend', () => this.stopDrag());
-    container.addEventListener('touchmove', (e) => this.moveHandle(e));
-  }
-
-  startDrag() {
-    this.isDragging = true;
-  }
-
-  stopDrag() {
-    this.isDragging = false;
-  }
-
-  moveHandle(event: MouseEvent | TouchEvent) {
-    if (!this.isDragging) return;
-
-    const container = this.compareContainer.nativeElement;
-    const overlay = this.overlay.nativeElement;
-    const handle = this.handle.nativeElement;
-
-    const rect = container.getBoundingClientRect();
-    const clientX =
-      (event as MouseEvent).clientX ||
-      (event as TouchEvent).touches[0].clientX;
-
-    let position = (clientX - rect.left) / rect.width;
-    position = Math.max(0, Math.min(1, position));
-
-    overlay.style.width = position * 100 + '%';
-    handle.style.left = position * 100 + '%';
-  }
 
   roleLeftItem = [
     {
@@ -301,13 +206,97 @@ export class HomeLayoutComponent {
         'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2FRectangle%2039.png?alt=media&token=7c7fe9f6-7003-4ec4-9ccb-c6a5c84a0d3f',
       link: '#'
     },
-    // {
-    //   title: 'Expression',
-    //   description:
-    //     'We bring creativity and practicality together — crafting expressive designs that inspire and perform.',
-    //   image:
-    //     'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-4.jpg?alt=media&token=d3be7353-2a11-4d3a-8a7a-6dee59d97444',
-    //   link: '#'
-    // }
   ];
+
+  clients = [
+    { name: 'HARISHBHAI GAGWANI', company: 'JAY VIJAY TEXTILE', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'SAURABH BANSAL', company: 'HAPPY EXOTICA', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'DR. DIVYESH PATHAK', company: 'ADWAITA CANCER HOSPITAL', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'ROMILBHAI VANAWALA', company: 'ASHIRWAD FARM', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'NIRAV KHOSIA', group: 'INFINITY GROUP', company: 'INFINITY ARBOR, SAMPLE FLAT', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'RAIUBHAI HATHIWALA', company: 'NITI NAGAR, BUNGALOW', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'HIMANSHU PATEL', company: 'PRIME CONSTRUCTIONS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'VISHAL DESAI', company: 'STAR TOWER', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'ANIL SHAH', company: 'SKYLINE HEIGHTS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'HIMANSHU PATEL', company: 'PRIME CONSTRUCTIONS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'VISHAL DESAI', company: 'STAR TOWER', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'ANIL SHAH', company: 'SKYLINE HEIGHTS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' }
+  ];
+
+  constructor() {
+    this.clientChunks = this.chunkArray(this.clients, 6);
+  }
+
+  private chunkArray(arr: any[], size: number) {
+    const result = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+    return result;
+  }
+
+  ngOnInit(): void {
+    this.testimonialGroups = this.chunkArrayTestimonials(this.testimonials, 3);
+  }
+
+  chunkArrayTestimonials(arr: any[], size: number) {
+    const result = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+    return result;
+  }
+
+  goTo(index: number) {
+    if (this.carousel) {
+      this.carousel.select(`slide-${index}`);
+      this.activeSlide = index;
+    }
+  }
+
+  onSlide(event: NgbSlideEvent) {
+    const id = event.current;
+    if (id.startsWith('slide-')) {
+      this.activeSlide = Number(id.replace('slide-', ''));
+    }
+  }
+
+  ngAfterViewInit(): void {
+    const container = this.compareContainer.nativeElement;
+    container.addEventListener('mousedown', () => this.startDrag());
+    container.addEventListener('mouseup', () => this.stopDrag());
+    container.addEventListener('mouseleave', () => this.stopDrag());
+    container.addEventListener('mousemove', (e) => this.moveHandle(e));
+
+    container.addEventListener('touchstart', () => this.startDrag());
+    container.addEventListener('touchend', () => this.stopDrag());
+    container.addEventListener('touchmove', (e) => this.moveHandle(e));
+  }
+
+  startDrag() {
+    this.isDragging = true;
+  }
+
+  stopDrag() {
+    this.isDragging = false;
+  }
+
+  moveHandle(event: MouseEvent | TouchEvent) {
+    if (!this.isDragging) return;
+
+    const container = this.compareContainer.nativeElement;
+    const overlay = this.overlay.nativeElement;
+    const handle = this.handle.nativeElement;
+
+    const rect = container.getBoundingClientRect();
+    const clientX =
+      (event as MouseEvent).clientX ||
+      (event as TouchEvent).touches[0].clientX;
+
+    let position = (clientX - rect.left) / rect.width;
+    position = Math.max(0, Math.min(1, position));
+
+    overlay.style.width = position * 100 + '%';
+    handle.style.left = position * 100 + '%';
+  }
 }

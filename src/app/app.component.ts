@@ -4,10 +4,11 @@ import { FooterComponent } from "./component/footer/footer.component";
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from "./component/header/header.component";
 import { HomeLayoutComponent } from "./Layout/home-layout/home-layout.component";
+import { AboutUsComponent } from "./component/about-us/about-us.component";
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule, RouterOutlet, FooterComponent, HeaderComponent, HomeLayoutComponent],
+  imports: [CommonModule, RouterOutlet, FooterComponent, HeaderComponent, HomeLayoutComponent, AboutUsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
