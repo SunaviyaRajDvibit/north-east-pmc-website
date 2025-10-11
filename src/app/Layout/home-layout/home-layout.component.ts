@@ -6,12 +6,14 @@ import {
   HostListener,
   ViewChild,
 } from '@angular/core';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
   selector: 'app-home-layout',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NgbCarouselModule, NgbModule],
   templateUrl: './home-layout.component.html',
   styleUrl: './home-layout.component.scss'
 })
@@ -20,6 +22,35 @@ export class HomeLayoutComponent {
   @ViewChild('compareContainer') compareContainer!: ElementRef<HTMLDivElement>;
   @ViewChild('overlay') overlay!: ElementRef<HTMLDivElement>;
   @ViewChild('handle') handle!: ElementRef<HTMLDivElement>;
+
+  clients = [
+    { name: 'HARISHBHAI GAGWANI', company: 'JAY VIJAY TEXTILE', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'SAURABH BANSAL', company: 'HAPPY EXOTICA', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'DR. DIVYESH PATHAK', company: 'ADWAITA CANCER HOSPITAL', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'ROMILBHAI VANAWALA', company: 'ASHIRWAD FARM', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'NIRAV KHOSIA', group: 'INFINITY GROUP', company: 'INFINITY ARBOR, SAMPLE FLAT', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'RAIUBHAI HATHIWALA', company: 'NITI NAGAR, BUNGALOW', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'HIMANSHU PATEL', company: 'PRIME CONSTRUCTIONS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'VISHAL DESAI', company: 'STAR TOWER', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'ANIL SHAH', company: 'SKYLINE HEIGHTS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'HIMANSHU PATEL', company: 'PRIME CONSTRUCTIONS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'VISHAL DESAI', company: 'STAR TOWER', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' },
+    { name: 'ANIL SHAH', company: 'SKYLINE HEIGHTS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' }
+  ];
+
+  clientChunks: any[] = [];
+
+  constructor() {
+    this.clientChunks = this.chunkArray(this.clients, 6); // 6 clients per slide
+  }
+
+  private chunkArray(arr: any[], size: number) {
+    const result = [];
+    for (let i = 0; i < arr.length; i += size) {
+      result.push(arr.slice(i, i + size));
+    }
+    return result;
+  }
 
   isDragging = false;
 

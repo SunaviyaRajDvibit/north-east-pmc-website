@@ -637,6 +637,40 @@
     <h3 class="heading mb-2">Our Clients</h3>
     <p class="sub-heading mt-3">Trusted by leading businesses, developers, and institutions for reliable project
         management solutions.</p>
+    <ngb-carousel [interval]="3000" [pauseOnHover]="true" [wrap]="true" class="client-carousel">
+        <ng-template ngbSlide *ngFor="let chunk of clientChunks">
+            <div class="container py-3">
+                <div class="row g-3">
+                    <div class="col-md-4" *ngFor="let client of chunk.slice(0, 3)">
+                        <div class="client-box">
+                            <img [src]="client.icon" alt="{{ client.name }}">
+                            <div>
+                                <h6>
+                                    {{ client.name }}
+                                    <span *ngIf="client.group" class="small"> {{ client.group }}</span>
+                                </h6>
+                                <p>{{ client.company }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="row g-3 mt-3">
+                    <div class="col-md-4" *ngFor="let client of chunk.slice(3, 6)">
+                        <div class="client-box">
+                            <img [src]="client.icon" alt="{{ client.name }}">
+                            <div>
+                                <h6>
+                                    {{ client.name }}
+                                    <span *ngIf="client.group" class="small"> {{ client.group }}</span>
+                                </h6>
+                                <p>{{ client.company }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </ngb-carousel>
 
 </section>
