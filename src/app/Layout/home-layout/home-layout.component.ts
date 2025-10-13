@@ -304,4 +304,8 @@ export class HomeLayoutComponent {
   goToServices() {
     this.router.navigate(['/services']); // no extra space
   }
+
+  goToProjects() {
+    this.router.navigate(['/projects']); // no extra space
+  }
 }
