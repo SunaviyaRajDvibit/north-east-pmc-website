@@ -8,12 +8,13 @@ import {
 } from '@angular/core';
 import { NgbCarouselModule, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-home-layout',
   standalone: true,
-  imports: [CommonModule, NgbCarouselModule, NgbModule],
+  imports: [CommonModule, NgbCarouselModule, NgbModule,],
   templateUrl: './home-layout.component.html',
   styleUrl: './home-layout.component.scss'
 })
@@ -223,7 +224,7 @@ export class HomeLayoutComponent {
     { name: 'ANIL SHAH', company: 'SKYLINE HEIGHTS', icon: 'https://cdn-icons-png.flaticon.com/512/194/194938.png' }
   ];
 
-  constructor() {
+  constructor(private router: Router) {
     this.clientChunks = this.chunkArray(this.clients, 6);
   }
 
@@ -298,5 +299,9 @@ export class HomeLayoutComponent {
 
     overlay.style.width = position * 100 + '%';
     handle.style.left = position * 100 + '%';
+  }
+
+  goToServices() {
+    this.router.navigate(['/services']); // no extra space
   }
 }

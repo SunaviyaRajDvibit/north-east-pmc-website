@@ -467,7 +467,7 @@
                         <div class="project-overlay">
                             <h4>{{proj.title}}</h4>
                             <p>{{proj.description}}</p>
-                            <a href="#" class="view-more">View More <i class="fas fa-arrow-right"></i></a>
+                            <a class="view-more">View More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -517,12 +517,12 @@
                         <div class="project-overlay">
                             <h4>{{ser.title}}</h4>
                             <p>{{ser.description}}</p>
-                            <a href="#" class="view-more">View More <i class="fas fa-arrow-right"></i></a>
+                            <a class="view-more">View More <i class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 d-flex flex-column justify-content-center align-items-center text-center mt-4">
-                    <button class="btn btn-primary mt-5">VIEW All services</button>
+                    <button class="btn btn-primary mt-5" (click)="goToServices()">VIEW All services</button>
                 </div>
             </div>
         </div>

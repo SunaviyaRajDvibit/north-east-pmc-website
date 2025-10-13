@@ -19,7 +19,6 @@ export const routes: Routes = [
         ],
     },
 
-    // ✅ Optional: handle invalid URLs (wildcard route)
     {
         path: '**',
         redirectTo: '',

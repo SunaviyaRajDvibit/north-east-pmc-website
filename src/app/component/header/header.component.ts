@@ -18,5 +18,8 @@ export class HeaderComponent {
     this.isScrolled = window.scrollY > 50;
   }
 
+  onAboutsUs() {
+    this.router.navigate(['/about-us']);
+  }
 
 }

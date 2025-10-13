@@ -1,1 +1,74 @@
-<p>services works!</p>
+<div class="banner-section">
+    <h4>Services</h4>
+</div>
+
+<div class="services-section">
+    <section class="section-sty">
+        <h3 class="heading mb-2">Our services</h3>
+        <p class="sub-heading mt-3">We specialize in residential, commercial, industrial construction.</p>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4" *ngFor="let ser of services">
+                    <div class="project-card">
+                        <img [src]="ser.image" alt="proj.title">
+                        <div class="project-overlay">
+                            <h4>{{ser.title}}</h4>
+                            <p>{{ser.description}}</p>
+                            <a class="view-more">View More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<section class="section-sty">
+    <h3 class="heading mb-2">WHAT WE DO</h3>
+    <p class="sub-heading mt-3"> Delivering End-to-End Project Management Solutions With Precision, Quality, And
+        Accountability.</p>
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-container row justify-content-center g-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-description">
+                            Buildings Control Approval Rate
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number">320+</div>
+                        <div class="stat-description">
+                            Active Construction Management
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number">200+</div>
+                        <div class="stat-description">
+                            Completed Projects Every Year
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="stat-card">
+                        <div class="stat-number" style="white-space: nowrap;">4.253</div>
+                        <div class="stat-description">
+                            Million Euros Turnover In The 2020
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</section>
