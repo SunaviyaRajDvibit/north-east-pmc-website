@@ -2,3 +2,20 @@
     <h4>Projects</h4>
     <p>Home/Projects</p>
 </div>
+
+<section class="section-sty">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-3" *ngFor="let proj of projects">
+                <div class="project-card">
+                    <img [src]="proj.image" alt="proj.title">
+                    <div class="project-overlay">
+                        <h4>{{proj.title}}</h4>
+                        <p>{{proj.description}}</p>
+                        <a class="view-more">View More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

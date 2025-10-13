@@ -1,0 +1,181 @@
+.banner-section {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fbanner-images%2Fc-1%20(2).jpg?alt=media&token=3c0c8f9b-12fb-410c-bb70-94a0ba0fe7c9");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  position: relative;
+}
+
+.banner-section h4 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.banner-section p {
+  font-size: 1.2rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+.banner-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 0;
+}
+
+.banner-section h4,
+.banner-section p {
+  position: relative;
+  z-index: 1;
+}
+/* Own Image Container */
+.own-image {
+  width: 100%;
+  height: 70vh;
+  border-radius: 81px;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background-color: #233b69;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Heading */
+.follow-us-text {
+  color: white;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Footer Social Icons */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  margin-top: 15px;
+}
+
+.footer-social a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 42px;
+  height: 42px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: #233b69;
+  background-color: #ffcc00;
+  border-color: #ffcc00;
+  transform: translateY(-4px) scale(1.1);
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
+}
+
+/* Footer Image Box */
+.footer-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+
+  height: 100%;
+  width: 100%;
+  max-width: 400px;
+  overflow: hidden;
+  margin-bottom: -20px;
+}
+
+/* Footer Image */
+.footer-image img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain; /* scales image proportionally */
+  display: block;
+}
+
+.contact-section {
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 12px;
+}
+
+.contact-section h2 {
+  font-weight: 700;
+  color: #233b69;
+  font-family: "Abhaya Libre", serif;
+  font-size: 2.5rem;
+}
+
+.contact-section p {
+  font-size: 1rem;
+  color: #a2a2a2;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  margin-top: 19px;
+  line-height: 29px;
+}
+
+.form-control {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: transparent;
+  padding: 0.875rem 0.75rem;
+  font-weight: 600;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-bottom: 2px solid #233b69;
+}
+
+.btn-submit {
+  background-color: #233b69;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #1a2a4a;
+}
+
+.map-iframe {
+  width: 100%;
+  height: 60vh;
+  border: 0;
+}
