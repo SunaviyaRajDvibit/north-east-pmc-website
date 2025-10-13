@@ -10,7 +10,6 @@ import { NgbCarouselModule, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-home-layout',
   standalone: true,
