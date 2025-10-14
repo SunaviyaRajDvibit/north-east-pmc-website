@@ -179,3 +179,42 @@
   height: 60vh;
   border: 0;
 }
+
+@media (max-width: 992px) {
+  .follow-us-text {
+    font-weight: 700;
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .follow-us-text {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile View (≤576px) */
+@media (max-width: 576px) {
+  .follow-us-text {
+    font-weight: 700;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-section h2 {
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .contact-section p {
+    font-size: 0.8rem;
+    color: #a2a2a2;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    margin-top: 19px;
+    line-height: 29px;
+  }
+}
