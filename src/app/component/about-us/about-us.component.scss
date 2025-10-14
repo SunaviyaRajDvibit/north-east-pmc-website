@@ -143,3 +143,20 @@
   color: #fff;
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .own-name {
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+  }
+  .project-card {
+    height: 50vw; /* Taller for small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .own-name {
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+  }
+}
