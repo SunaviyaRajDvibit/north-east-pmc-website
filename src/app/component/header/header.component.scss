@@ -11,61 +11,40 @@
   font-size: 1.2rem;
 }
 
-/* After scroll */
 .custom-navbar.scrolled {
   backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.553);
+  background: rgba(255, 255, 255, 0.9);
   padding: 1rem 1rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.custom-navbar.scrolled .nav-link {
-  color: rgb(38, 38, 38) !important;
-}
-
-/* Logo */
 .navbar-logo {
   height: 55px;
   width: auto;
 }
 
-.navbar-nav {
-  display: flex !important;
-  flex-direction: row !important;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.navbar-nav .nav-item {
-  margin: 0 5px;
-}
-/* Navbar Links */
+/* Links */
 .navbar-nav .nav-link {
   position: relative;
   font-weight: 500;
-  color: #ffffff;
+  color: #fff;
   margin: 0 12px;
   letter-spacing: 0.5px;
   text-transform: capitalize;
   font-size: 1.1rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  transition: color 0.3s ease;
 }
 
-/* Hover + Active States */
+.custom-navbar.scrolled .nav-link {
+  color: #233b69 !important;
+}
+
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
-  position: relative;
   color: #233b69;
-  font-weight: 700;
-  margin: 0 12px;
-  letter-spacing: 0.5px;
-  text-transform: capitalize;
-  font-size: 1.1rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+  font-weight: 600;
 }
 
-/* Underline Animation */
 .navbar-nav .nav-link::after {
   content: "";
   position: absolute;
@@ -77,7 +56,6 @@
   transition: width 0.3s ease;
 }
 
-/* Hover & Active Underline */
 .navbar-nav .nav-link:hover::after {
   width: 100%;
 }
@@ -85,7 +63,7 @@
 /* Button */
 .start-btn {
   background-color: #233b69;
-  color: #e4e4e4;
+  color: #fff;
   font-weight: 600;
   border-radius: 30px;
   padding: 10px 20px;
@@ -99,22 +77,48 @@
   background-color: #10254e;
 }
 
+/* Offcanvas Styles */
+.custom-offcanvas {
+  width: 80%;
+  background: #ffffff;
+  color: #233b69;
+  padding: 2rem 1rem;
+  border-radius: 10px 0 0 10px;
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.offcanvas-body .nav-link {
+  display: block;
+  color: #233b69;
+  font-size: 1.1rem;
+  padding: 10px 0;
+  text-transform: capitalize;
+}
+
+.offcanvas-body .nav-link.active,
+.offcanvas-body .nav-link:hover {
+  color: #10254e;
+  font-weight: 600;
+}
+
+.btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
   .custom-navbar {
-    padding: 1.2rem;
+    padding: 0.4rem;
+    background: rgba(255, 255, 255, 0.383);
   }
 
-  .navbar-collapse {
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 10px;
-    padding: 1rem;
+  .navbar-toggler {
+    border: none;
   }
 
-  .start-btn {
-    display: block;
-    width: 100%;
-    text-align: center;
-    margin-top: 10px;
+  .navbar-toggler:focus {
+    box-shadow: none;
   }
 }

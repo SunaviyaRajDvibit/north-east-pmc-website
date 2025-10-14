@@ -1,34 +1,66 @@
 <nav class="navbar navbar-expand-lg navbar-light custom-navbar" [ngClass]="{ 'scrolled': isScrolled }">
     <div class="container">
         <!-- Logo -->
-        <a class="navbar-brand d-flex align-items-center" href="#">
+        <a class="navbar-brand d-flex align-items-center" routerLink="/">
             <img src="https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fservices%2Ftest%2Fnorth-east-logo.png?alt=media&token=20789c92-37b2-49e0-8f08-47af05c4ddcd"
                 alt="North East Logo" class="navbar-logo me-2" />
         </a>
 
         <!-- Toggler -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" (click)="openOffcanvas(offcanvasContent)"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <!-- Menu -->
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <!-- Desktop Menu -->
+        <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex" id="navbarNav">
             <ul class="navbar-nav mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link" routerLink="" routerLinkActive="active"
-                        [routerLinkActiveOptions]="{ exact: true }">home</a></li>
-                <li class="nav-item"><a class="nav-link" routerLink="/about-us" routerLinkActive="active">about us</a>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{ exact: true }">home</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" routerLink="/projects" routerLinkActive="active">projects</a>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/about-us" routerLinkActive="active">about us</a>
                 </li>
-                <li class="nav-item"><a class="nav-link" routerLink="/contact-us" routerLinkActive="active">contact
-                        us</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/projects" routerLinkActive="active">projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/contact-us" routerLinkActive="active">contact us</a>
+                </li>
             </ul>
         </div>
 
-        <!-- Button -->
+        <!-- Desktop Button -->
         <div class="d-none d-lg-block">
             <a routerLink="/contact-us" class="btn start-btn">START YOUR PROJECT</a>
         </div>
     </div>
 </nav>
+
+<!-- Offcanvas (Mobile Menu) -->
+<ng-template #offcanvasContent let-offcanvas>
+    <div class="offcanvas-body text-center">
+        <button type="button" class="btn-close float-end" aria-label="Close" (click)="offcanvas.dismiss()"></button>
+        <ul class="navbar-nav mt-4">
+            <li class="nav-item">
+                <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                    (click)="offcanvas.dismiss()">home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/about-us" routerLinkActive="active" (click)="offcanvas.dismiss()">about
+                    us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/projects" routerLinkActive="active"
+                    (click)="offcanvas.dismiss()">projects</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/contact-us" routerLinkActive="active"
+                    (click)="offcanvas.dismiss()">contact us</a>
+            </li>
+        </ul>
+        <a routerLink="/contact-us" class="btn start-btn mt-4 w-100" (click)="offcanvas.dismiss()">START YOUR
+            PROJECT</a>
+    </div>
+</ng-template>

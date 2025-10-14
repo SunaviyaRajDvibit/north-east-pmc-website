@@ -2,6 +2,7 @@ import { Component, HostListener } from '@angular/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
+import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-header',
@@ -13,6 +14,8 @@ export class HeaderComponent {
   isScrolled = false;
   router: any;
 
+  constructor(private offcanvasService: NgbOffcanvas) { }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     this.isScrolled = window.scrollY > 50;
@@ -22,4 +25,10 @@ export class HeaderComponent {
     this.router.navigate(['/about-us']);
   }
 
+  openOffcanvas(content: any) {
+    this.offcanvasService.open(content, {
+      position: 'end',
+      panelClass: 'custom-offcanvas'
+    });
+  }
 }
