@@ -18,100 +18,70 @@ export class ProjectsComponent {
 
   projects = [
     {
-      title: 'Building Construction',
+      title: 'C.R. Patil Bunglow',
       description:
         'Our post-construction services give you peace of mind knowing that we are still here for you even after.',
       image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-1-1.jpg?alt=media&token=a5766466-f285-414f-a308-cf3c5a47a0e4',
+        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2FNew%2FC.R.%20Patil.jpg?alt=media&token=c141868a-fb94-49de-a0b7-403b93f8671e',
       link: '#'
     },
     {
-      title: 'Architecture Design',
+      title: 'Happy Exotica',
       description:
         'Creative architectural designs that blend functionality, aesthetics, and sustainability.',
       image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-2.jpg?alt=media&token=9931bd81-a6b2-4697-9a7d-917cce1c1642',
+        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2FNew%2FHappy-ex.jpg?alt=media&token=b877a0b0-2fc2-4b2f-a9d4-4c871019a951',
       link: '#'
     },
     {
-      title: 'Building Renovation',
+      title: 'Rajhans Altezza',
       description:
         'Enhancing existing structures with modern upgrades, efficiency, and design precision.',
       image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-3.jpg?alt=media&token=5ce7605b-618c-4877-876f-4368a8a179d2',
+        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2FNew%2FG-602.jpg?alt=media&token=9d3b58cf-6e7a-4064-8662-dbf263ac8e7e',
       link: '#'
     },
     {
-      title: 'Expression',
+      title: 'Celestial Dream',
       description:
         'We bring creativity and practicality together — crafting expressive designs that inspire and perform.',
       image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-4.jpg?alt=media&token=d3be7353-2a11-4d3a-8a7a-6dee59d97444',
+        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2FNew%2FC-1102%2C%20Celestial%20Dream.jpg?alt=media&token=a9df7cbe-05c3-449c-9de1-08feb701f4ce',
       link: '#'
     },
     {
-      title: 'Building Construction',
-      description:
-        'Our post-construction services give you peace of mind knowing that we are still here for you even after.',
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-1-1.jpg?alt=media&token=a5766466-f285-414f-a308-cf3c5a47a0e4',
-      link: '#'
-    },
-    {
-      title: 'Architecture Design',
-      description:
-        'Creative architectural designs that blend functionality, aesthetics, and sustainability.',
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-2.jpg?alt=media&token=9931bd81-a6b2-4697-9a7d-917cce1c1642',
-      link: '#'
-    },
-    {
-      title: 'Building Renovation',
-      description:
-        'Enhancing existing structures with modern upgrades, efficiency, and design precision.',
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-3.jpg?alt=media&token=5ce7605b-618c-4877-876f-4368a8a179d2',
-      link: '#'
-    },
-    {
-      title: 'Expression',
+      title: 'Adwita Hospital',
       description:
         'We bring creativity and practicality together — crafting expressive designs that inspire and perform.',
       image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-4.jpg?alt=media&token=d3be7353-2a11-4d3a-8a7a-6dee59d97444',
+        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2FNew%2FAdwita%20Hospital%20.jpg?alt=media&token=2b5e26b4-8b83-4791-93a6-53464c74a12f',
       link: '#'
     },
     {
-      title: 'Building Construction',
-      description:
-        'Our post-construction services give you peace of mind knowing that we are still here for you even after.',
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-1-1.jpg?alt=media&token=a5766466-f285-414f-a308-cf3c5a47a0e4',
-      link: '#'
-    },
-    {
-      title: 'Architecture Design',
-      description:
-        'Creative architectural designs that blend functionality, aesthetics, and sustainability.',
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-2.jpg?alt=media&token=9931bd81-a6b2-4697-9a7d-917cce1c1642',
-      link: '#'
-    },
-    {
-      title: 'Building Renovation',
-      description:
-        'Enhancing existing structures with modern upgrades, efficiency, and design precision.',
-      image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-3.jpg?alt=media&token=5ce7605b-618c-4877-876f-4368a8a179d2',
-      link: '#'
-    },
-    {
-      title: 'Expression',
+      title: 'Infinity Arbor',
       description:
         'We bring creativity and practicality together — crafting expressive designs that inspire and perform.',
       image:
-        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2Four-project-4.jpg?alt=media&token=d3be7353-2a11-4d3a-8a7a-6dee59d97444',
+        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2FNew%2Fcp1.jpg?alt=media&token=e37fcc46-a6a4-4261-934d-7c627cddbb07',
       link: '#'
-    },
+    }
+    ,
+    {
+      title: 'Ashirwad Farm',
+      description:
+        'We bring creativity and practicality together — crafting expressive designs that inspire and perform.',
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2FNew%2Fdb-1.jpg?alt=media&token=39e3f171-43a2-4748-852a-c6db69cb766f',
+      link: '#'
+    }
+    ,
+    {
+      title: 'Niti Nagar',
+      description:
+        'We bring creativity and practicality together — crafting expressive designs that inspire and perform.',
+      image:
+        'https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Fproject-img%2FNew%2FCR-2.jpg?alt=media&token=49124144-0b1c-4239-8233-421dd8d4bf9f',
+      link: '#'
+    }
   ];
 }
