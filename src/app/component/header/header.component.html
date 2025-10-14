@@ -7,9 +7,9 @@
         </a>
 
         <!-- Toggler -->
-        <button class="navbar-toggler" type="button" (click)="openOffcanvas(offcanvasContent)"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+        <button class="btn btn-outline-light d-block d-md-none" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#sidebarMenu">
+            <i class="fas fa-bars"></i>
         </button>
 
         <!-- Desktop Menu -->
@@ -38,29 +38,70 @@
     </div>
 </nav>
 
-<!-- Offcanvas (Mobile Menu) -->
-<ng-template #offcanvasContent let-offcanvas>
-    <div class="offcanvas-body text-center">
-        <button type="button" class="btn-close float-end" aria-label="Close" (click)="offcanvas.dismiss()"></button>
-        <ul class="navbar-nav mt-4">
-            <li class="nav-item">
-                <a class="nav-link" routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-                    (click)="offcanvas.dismiss()">home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/about-us" routerLinkActive="active" (click)="offcanvas.dismiss()">about
-                    us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/projects" routerLinkActive="active"
-                    (click)="offcanvas.dismiss()">projects</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" routerLink="/contact-us" routerLinkActive="active"
-                    (click)="offcanvas.dismiss()">contact us</a>
-            </li>
-        </ul>
-        <a routerLink="/contact-us" class="btn start-btn mt-4 w-100" (click)="offcanvas.dismiss()">START YOUR
-            PROJECT</a>
+
+<!-- Offcanvas Sidebar -->
+<div class="offcanvas offcanvas-start custom-offcanvas" tabindex="-1" id="sidebarMenu">
+    <div class="offcanvas-body d-flex flex-column justify-content-between ">
+        <!-- Profile Section -->
+        <div>
+            <div class="text-center mb-2">
+                <img src="https://firebasestorage.googleapis.com/v0/b/north-east-pmc.appspot.com/o/website-images%2Flogo%2F123456789-removebg-preview.png?alt=media&token=a840cd17-b7ae-439a-ac10-b396ea927f4b"
+                    alt="Profile" class="mb-2" width="100">
+                <h3 class="text-white mb-0">North East</h3>
+            </div>
+
+            <hr class="border-secondary">
+
+            <!-- Menu Items -->
+            <ul class="nav flex-column text-white">
+                <li class="nav-item mb-3">
+                    <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+                        class="nav-link text-white-50"><i class="fas fa-home me-2"></i>Home</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a routerLink="/about-us" routerLinkActive="active" class="nav-link text-white-50"><i
+                            class="fa-solid fa-circle-info me-2"></i>About US</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a routerLink="/projects" routerLinkActive="active"
+                        class="nav-link text-white-50 d-flex justify-content-between align-items-center">
+                        <span><i class="fa-solid fa-diagram-project me-2"></i>Projects</span>
+                    </a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link" routerLink="/services" routerLinkActive="active"
+                        class="nav-link text-white-50"><i class="fas fa-screwdriver-wrench me-2"></i>
+                        Services</a>
+                </li>
+                <li class="nav-item mb-3">
+                    <a class="nav-link" routerLink="/contact-us" routerLinkActive="active"
+                        class="nav-link text-white-50"><i class="fas fa-address-book me-2"></i> Contact US</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Footer Section -->
+        <div>
+            <!-- Welcome Box -->
+            <div class="welcome-box text-center mt-4 mb-3 p-4 rounded-4">
+                <h6 class="fw-bold mb-1">👋 Welcome To</h6>
+                <h5 class="fw-bold text-white mb-3">North East PMC</h5>
+
+                <div class="designer-badge mt-2">
+                    <span>Designed by</span>
+                    <a href="https://www.dvibit.com" target="_blank">
+                        <strong>DVIBIT</strong>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="text-white-50"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-white-50"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-white-50"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="text-white-50"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </div>
-</ng-template>
+</div>

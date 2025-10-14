@@ -13,8 +13,8 @@
 
 .custom-navbar.scrolled {
   backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.9);
-  padding: 1rem 1rem;
+  background: rgba(255, 255, 255, 0.403);
+  padding: 0.4rem;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -83,7 +83,6 @@
   background: #ffffff;
   color: #233b69;
   padding: 2rem 1rem;
-  border-radius: 10px 0 0 10px;
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -120,5 +119,129 @@
 
   .navbar-toggler:focus {
     box-shadow: none;
+  }
+}
+
+.custom-offcanvas {
+  background: linear-gradient(180deg, #1e2532 0%, #131820 100%);
+  color: #fff;
+  width: 280px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-offcanvas .nav-link {
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.custom-offcanvas .nav-link:hover {
+  color: #fff;
+  transform: translateX(5px);
+}
+
+.custom-offcanvas .offcanvas-header {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.custom-offcanvas .offcanvas-body {
+  padding: 1.5rem;
+}
+
+.badge {
+  font-size: 0.75rem;
+}
+
+.btn-outline-light {
+  border-color: #fff;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.welcome-box {
+  background: linear-gradient(145deg, #007bff, #0047ab);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
+}
+
+.welcome-box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.15),
+    transparent 70%
+  );
+  animation: light-move 6s linear infinite;
+}
+
+@keyframes light-move {
+  0% {
+    transform: translate(-30%, -30%);
+  }
+  100% {
+    transform: translate(30%, 30%);
+  }
+}
+
+.welcome-box h6 {
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  color: #e8e8e8;
+}
+
+.welcome-box h5 {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.designer-badge {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  display: inline-flex;
+  flex-direction: column; /* 👈 stacked vertically */
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  color: #fff;
+  transition: all 0.3s ease;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.designer-badge span {
+  color: #dcdcdc;
+  font-size: 0.85rem;
+}
+
+.designer-badge strong {
+  color: #ffe600;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  margin-top: 3px;
+}
+
+.designer-badge:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+@media (max-width: 992px) {
+  .web-none {
+    display: none !important;
   }
 }
