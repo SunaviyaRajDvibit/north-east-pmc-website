@@ -9,6 +9,7 @@ import {
 import { NgbCarouselModule, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-home-layout',
@@ -236,6 +237,10 @@ export class HomeLayoutComponent {
   }
 
   ngOnInit(): void {
+    AOS.init({
+      duration: 1000, // Animation duration (in ms)
+      once: true,     // Whether animation should happen only once
+    });
     this.testimonialGroups = this.chunkArrayTestimonials(this.testimonials, 3);
   }
 
