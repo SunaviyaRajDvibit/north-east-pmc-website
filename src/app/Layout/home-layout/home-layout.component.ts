@@ -238,10 +238,21 @@ export class HomeLayoutComponent {
 
   ngOnInit(): void {
     AOS.init({
-      duration: 1000, // Animation duration (in ms)
-      once: true,     // Whether animation should happen only once
+      duration: 1000,
+      once: true,
     });
-    this.testimonialGroups = this.chunkArrayTestimonials(this.testimonials, 3);
+    this.updateTestimonialGroups();
+    window.addEventListener('resize', this.updateTestimonialGroups.bind(this));
+  }
+
+  ngOnDestroy(): void {
+    window.removeEventListener('resize', this.updateTestimonialGroups.bind(this));
+  }
+
+  updateTestimonialGroups() {
+    const screenWidth = window.innerWidth;
+    const groupSize = screenWidth < 768 ? 1 : 3; // Mobile <768px → 1 item, else 3
+    this.testimonialGroups = this.chunkArrayTestimonials(this.testimonials, groupSize);
   }
 
   chunkArrayTestimonials(arr: any[], size: number) {
@@ -253,17 +264,11 @@ export class HomeLayoutComponent {
   }
 
   goTo(index: number) {
-    if (this.carousel) {
-      this.carousel.select(`slide-${index}`);
-      this.activeSlide = index;
-    }
+    this.activeSlide = index;
   }
 
-  onSlide(event: NgbSlideEvent) {
-    const id = event.current;
-    if (id.startsWith('slide-')) {
-      this.activeSlide = Number(id.replace('slide-', ''));
-    }
+  onSlide(event: any) {
+    this.activeSlide = event.current;
   }
 
   ngAfterViewInit(): void {

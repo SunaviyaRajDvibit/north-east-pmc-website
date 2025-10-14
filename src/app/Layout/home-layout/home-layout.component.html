@@ -727,12 +727,13 @@
     <h3 class="heading mb-2">Our Testimonials</h3>
     <p class="sub-heading mt-3">Hear from our clients about their experience working with us.</p>
     <div class="container">
-        <ngb-carousel #carouselRef="ngbCarousel" [interval]="3000" [pauseOnHover]="true"
+        <ngb-carousel #carouselRef="ngbCarousel" [interval]="2000" [pauseOnHover]="true"
             [showNavigationIndicators]="false" [showNavigationArrows]="true" (slide)="onSlide($event)"
             class="testimonial-carousel">
+
             <ng-template ngbSlide *ngFor="let group of testimonialGroups">
                 <div class="row justify-content-center">
-                    <div class="col-md-4" *ngFor="let testimonial of group">
+                    <div class="col-md-4 col-12" *ngFor="let testimonial of group">
                         <div class="testimonial-card p-4 mb-4">
                             <div class="stars mb-3">
                                 <i class="fas fa-star p-1" *ngFor="let s of [].constructor(testimonial.stars)"></i>
@@ -751,10 +752,11 @@
                 </div>
             </ng-template>
         </ngb-carousel>
+
         <div class="custom-indicators text-center mt-4">
             <button *ngFor="let g of testimonialGroups; let idx = index" class="indicator-dot"
-                [class.active]="idx === activeSlide" (click)="goTo(idx)"
-                [attr.aria-label]="'Go to slide ' + (idx + 1)"></button>
+                [class.active]="idx === activeSlide" (click)="goTo(idx)" [attr.aria-label]="'Go to slide ' + (idx + 1)">
+            </button>
         </div>
     </div>
 </section>
