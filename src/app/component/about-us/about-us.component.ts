@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { NgbCarouselModule, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-about-us',
@@ -16,6 +17,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   styleUrl: './about-us.component.scss'
 })
 export class AboutUsComponent {
+  ngOnInit(): void {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }
 
   teamMembers = [
     {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-projects',
@@ -8,6 +9,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './projects.component.scss'
 })
 export class ProjectsComponent {
+  ngOnInit(): void {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }
+
   projects = [
     {
       title: 'Building Construction',

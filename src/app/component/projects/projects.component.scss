@@ -119,3 +119,46 @@
   color: #fff;
   text-decoration: underline;
 }
+
+@media (max-width: 992px) {
+  .project-card {
+    height: 40vw; /* slightly taller for tablets */
+  }
+
+  /* Overlay text */
+  .project-overlay h4 {
+    font-size: 1.1rem; /* smaller than desktop */
+  }
+
+  .project-overlay p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    height: 50vw; /* Taller for small screens */
+  }
+
+  .project-overlay h4 {
+    font-size: 1rem;
+  }
+
+  .project-overlay p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile View (≤576px) */
+@media (max-width: 576px) {
+  .project-card {
+    height: 60vw; /* Even taller on very small screens */
+  }
+  .project-overlay h4 {
+    font-size: 1.1rem;
+  }
+
+  .project-overlay p {
+    font-size: 0.85rem;
+  }
+}

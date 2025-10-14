@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import * as AOS from 'aos';
 
 @Component({
   selector: 'app-services',
@@ -8,6 +9,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './services.component.scss'
 })
 export class ServicesComponent {
+  ngOnInit(): void {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }
   services = [
     {
       title: 'On-Time Delivery',
