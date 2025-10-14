@@ -4,8 +4,9 @@
   height: 100vh; /* Use viewport height for better responsiveness */
   max-height: 800px;
   min-height: 400px;
+  position: relative;
+  overflow: hidden;
 }
-
 .banner-carousel .carousel-item img {
   height: 100%;
   width: 100%;
@@ -17,34 +18,35 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  width: 100%; /* Full width */
-  max-width: 100%; /* Prevent Bootstrap limiting width */
+  width: 100%;
   text-align: center;
-
   color: #fff;
   padding: 0 2rem; /* Keep spacing on sides for mobile */
+  z-index: 10;
 }
 
 .carousel-caption h2 {
-  font-size: clamp(2rem, 4vw, 2.5rem); /* Responsive */
+  font-family: "Abhaya Libre", serif;
   font-weight: 700;
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.3;
   margin: 0 auto;
-  max-width: 80%; /* Optional: limit text line length */
+  max-width: 850px;
 }
-
 .carousel-caption button {
-  margin-top: 1.5rem;
-  padding: 0.9rem 2rem;
+  margin-top: 2rem;
+  padding: 0.9rem 2.2rem;
   font-size: 1.1rem;
-  border-radius: 30px;
-  background: #004aad;
+  font-weight: 500;
+  border-radius: 50px;
+  background: #233b69;
   border: none;
+  color: #fff;
   transition: all 0.3s ease-in-out;
 }
 
 .carousel-caption button:hover {
-  background: #003080;
+  background: #19294a;
   transform: scale(1.05);
 }
 
@@ -122,9 +124,7 @@
   max-width: 1200px;
   margin: 20px auto;
   border-radius: 10px;
-  // box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  // background-color: #fff;
 }
 
 .why-choose-icon-circle {
@@ -194,6 +194,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .vertical-text {
   font-size: 1.5rem;
   padding: 0 10px;
@@ -225,33 +226,6 @@
   width: 150px;
   height: 150px;
   object-fit: cover;
-}
-
-/* --- Responsive Adjustments (for mobile) --- */
-@media (max-width: 991.98px) {
-  /* On smaller screens, stack the columns */
-  .chaos-column,
-  .control-column {
-    flex-direction: column;
-  }
-
-  /* Make the title horizontal on mobile */
-  .vertical-text {
-    writing-mode: horizontal-tb;
-    transform: none;
-    font-size: 1.25rem;
-    padding: 0;
-    text-align: left;
-  }
-
-  /* Make the title panel full width and move it to the top/bottom */
-  .chaos-title-panel,
-  .control-title-panel {
-    width: 100%;
-    height: auto;
-    padding: 1rem;
-    justify-content: flex-start;
-  }
 }
 
 .project-flow {
@@ -437,6 +411,16 @@
 }
 
 /* our role section */
+
+.logo-box {
+  padding: 5px;
+}
+
+.logo-box img {
+  max-width: 100%; /* ensures no overflow */
+  height: auto; /* maintains aspect ratio */
+  display: inline-block;
+}
 .feature-box {
   border: 2px solid #233b69;
   border-radius: 30px;
@@ -463,17 +447,6 @@
 }
 
 /* ---- ARROW LINES ---- */
-.col-md-5 .feature-box::after {
-  content: "";
-  position: absolute;
-  right: -40px;
-  top: 50%;
-  width: 40px;
-  height: 2px;
-  background: #233b69;
-  transform: rotate(45deg);
-  transform-origin: left center;
-}
 
 /* Remove line from last box */
 .col-md-5 .feature-box:last-child::after {
@@ -520,6 +493,7 @@
   cursor: pointer;
   width: 100%;
   height: 25vw;
+  max-height: 400px;
 }
 
 .project-card img {
@@ -588,7 +562,6 @@
 }
 
 /* something new */
-
 .somrthing {
   padding: 3em 2rem 0rem 0rem;
   position: relative;
@@ -608,16 +581,16 @@
 
 .somrthing-wrong h3 {
   color: #fff;
-  font-size: 3.2rem;
+  font-size: clamp(2rem, 3vw, 3.2rem); /* responsive font size */
   text-transform: capitalize;
-  line-height: 5rem;
+  line-height: clamp(2.5rem, 4vw, 5rem); /* responsive line height */
   font-weight: 600;
 }
 
 .somrthing-wrong p {
   color: #ebebeb;
   margin-top: 1.2rem;
-  font-size: 1.1rem;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
   font-weight: 400;
   line-height: 2rem;
   max-width: 100%;
@@ -740,9 +713,9 @@
 
 .section-title {
   font-weight: 700;
-  font-size: 52px;
+  font-size: clamp(1.8rem, 3vw, 3.5rem); /* responsive */
   text-transform: uppercase;
-  margin-top: 22rem;
+  margin-top: 20rem;
   margin-bottom: 40px;
   color: #2a2a2a;
 }
@@ -752,6 +725,7 @@
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  width: 100%;
 }
 
 .table thead {
@@ -946,4 +920,434 @@ h2.text-primary {
 /* optional: small subtle ring for accessibility focus */
 .indicator-dot:focus {
   box-shadow: 0 0 0 4px rgba(35, 59, 105, 0.12);
+}
+
+/* ---------- Responsive Design ---------- */
+
+@media (max-width: 992px) {
+  .banner-carousel {
+    height: 75vh;
+  }
+
+  .mmb {
+    margin-bottom: 5rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    max-width: 90%;
+  }
+
+  .carousel-caption button {
+    font-size: 1rem;
+    padding: 0.8rem 1.8rem;
+    margin-top: 1.5rem;
+  }
+
+  /* On smaller screens, stack the columns */
+  .chaos-column,
+  .control-column {
+    // flex-direction: column;
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  /* Make the title horizontal on mobile */
+  .vertical-text {
+    writing-mode: horizontal-tb; /* Switch to horizontal */
+    transform: rotate(0deg); /* Remove rotation */
+    font-size: 1.3rem; /* Slightly smaller font */
+    padding: 0 5px;
+    text-align: center;
+    margin-bottom: 0.5rem; /* Add spacing below */
+  }
+
+  /* Make the title panel full width and move it to the top/bottom */
+  .chaos-title-panel,
+  .control-title-panel {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+
+  .chaos-column,
+  .control-column {
+    margin: 1rem;
+  }
+
+  .why-choose-icon-circle,
+  .why-choose-icon-circle-sccess {
+    width: 40px;
+    height: 40px;
+  }
+
+  .why-choose-icon-circle img,
+  .why-choose-icon-circle-sccess img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .content-list h5 {
+    font-size: 0.95rem;
+    text-align: left !important;
+  }
+
+  .content-list p {
+    font-size: 0.8rem;
+    text-align: left !important;
+  }
+
+  .process-step-circle img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .process-step-circles img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .role-desc {
+    font-size: 1.1rem;
+  }
+
+  .img-right,
+  .img-left {
+    float: none;
+    display: block;
+    margin: 0 auto 15px auto;
+  }
+
+  .section-sty {
+    padding: 3rem 1rem;
+  }
+
+  .info-box {
+    padding: 8px 30px;
+    font-size: 0.85rem;
+    gap: 6px;
+  }
+
+  .info-box .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .title {
+    font-size: 0.85rem;
+  }
+  .project-card {
+    height: 40vw; /* slightly taller for tablets */
+  }
+
+  /* Overlay text */
+  .project-overlay h4 {
+    font-size: 1.1rem; /* smaller than desktop */
+  }
+
+  .project-overlay p {
+    font-size: 1rem;
+  }
+
+  /* Adjust button or spacing if needed */
+  .view-more {
+    font-size: 0.95rem;
+    margin-top: 5px;
+  }
+  .somrthing {
+    padding: 2.5em 1.5rem 0em 1.5rem;
+  }
+  .cta-img {
+    min-height: 300px;
+  }
+  .updateTake-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .section-title {
+    margin-top: 16rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .table th,
+  .table td {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+
+  .caption {
+    font-size: 0.85rem;
+  }
+
+  .small-img {
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    height: 50vw; /* Taller for small screens */
+  }
+
+  .project-overlay h4 {
+    font-size: 1rem;
+  }
+
+  .project-overlay p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile View (≤576px) */
+@media (max-width: 576px) {
+  .mmb {
+    margin-bottom: 5rem;
+  }
+
+  .card-mb {
+    margin: 0.5rem !important;
+  }
+
+  .banner-carousel {
+    height: 70vh;
+    min-height: 350px;
+  }
+
+  .carousel-caption {
+    padding: 0 1rem;
+    top: 40%;
+  }
+
+  .carousel-caption h2 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    max-width: 95%;
+    text-transform: none;
+    line-height: 1.4;
+    line-height: 2.5rem;
+    font-size: 28px;
+    font-weight: 400;
+  }
+
+  .carousel-caption button {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.6rem;
+    margin-top: 1.2rem;
+  }
+
+  .row.g-0.h-100 {
+    flex-direction: column;
+  }
+
+  .chaos-column,
+  .control-column {
+    margin: 0.5rem 1rem;
+    border-radius: 15px;
+  }
+
+  .vertical-text {
+    writing-mode: horizontal-tb;
+    transform: rotate(0deg);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .chaos-title-box,
+  .chaos-title-panel-box {
+    border-radius: 15px;
+  }
+
+  .why-choose-icon-circle,
+  .why-choose-icon-circle-sccess {
+    width: 35px;
+    height: 35px;
+  }
+
+  .why-choose-icon-circle img,
+  .why-choose-icon-circle-sccess img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .content-list h5 {
+    font-size: 0.9rem;
+    text-align: left !important;
+  }
+
+  .content-list p {
+    font-size: 0.8rem;
+    text-align: left !important;
+  }
+  .row.align-items-start.role-section {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .col-md-9,
+  .col-md-3 {
+    max-width: 100%;
+    flex: 0 0 100%;
+    padding: 0.5rem 1rem;
+  }
+
+  .process-step-circle img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .process-step-circles img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .role-desc {
+    font-size: 1rem;
+    line-height: 1.4;
+    color: #7d7d7d !important;
+    font-weight: 500 !important;
+  }
+
+  .step-name {
+    font-size: 1rem !important;
+  }
+
+  .section-sty {
+    padding: 2rem 1rem;
+  }
+
+  .custom-line,
+  .curved-lines,
+  .horizontal-connector {
+    height: 6px;
+  }
+
+  .horizontal-connector::before,
+  .horizontal-connector::after {
+    width: 6px;
+    height: 42px;
+  }
+
+  .vertical-connector {
+    width: 6px;
+    height: 30px;
+  }
+
+  .img-right,
+  .img-left {
+    margin: 0 auto 10px auto;
+  }
+
+  .info-box {
+    flex-direction: column; /* Stack icon & text vertically */
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    gap: 5px;
+    width: 100%; /* Full width */
+    margin-bottom: 1rem; /* Space between boxes */
+  }
+
+  .info-box .icon {
+    width: 30px; /* Slightly larger for mobile */
+    height: 30px;
+  }
+
+  .title {
+    font-size: 0.8rem;
+  }
+
+  .project-card {
+    height: 60vw; /* Even taller on very small screens */
+  }
+
+  .project-overlay h4 {
+    font-size: 1.1rem;
+  }
+
+  .project-overlay p {
+    font-size: 0.85rem;
+  }
+
+  .somrthing-wrong h3 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+  .somrthing-wrong p {
+    font-size: 0.95rem;
+    line-height: 1.6rem;
+  }
+  .cta-btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+  .cta-img {
+    min-height: 250px;
+    text-align: center;
+  }
+  .bottom-fixed-img {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    margin: 1rem auto 0 auto;
+    display: block;
+    width: 80%;
+    max-width: 300px;
+  }
+  .updateTake-section {
+    padding: 2rem 1rem;
+  }
+
+  .row.g-5 {
+    row-gap: 0rem;
+  }
+
+  .col-lg-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .small-img {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .caption {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .client-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+
+  .client-box img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+  }
+
+  .client-carousel .row {
+    margin: 0;
+  }
+}
+
+/* Extra Small Devices (≤400px) */
+@media (max-width: 400px) {
+  .banner-carousel {
+    height: 55vh;
+  }
+
+  .carousel-caption h2 {
+    font-size: 1.1rem;
+  }
+
+  .carousel-caption button {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.4rem;
+  }
 }
